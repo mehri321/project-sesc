@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block css %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .status-card {
+        max-width: 600px;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+    .status-card h1 {
+        color: #007bff;
+        font-size: 2.5em;
+    }
+    .status-card p {
+        color: #28a745;
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+    .status-card .note {
+        margin-top: 20px;
+        color: #6c757d;
+        font-size: 1em;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card shadow-sm status-card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Graduation Status</h2>
+        </div>
+        <div class="card-body">
+            <h1>{{ data.status }}</h1>
+            <p>{{ data.note }}</p> 
+            {% if data.createAccount %}
+            <p class="btn btn-primary"><a href="/reg-finance" class="text-white text-decoration-none">Create Finance Account</a></p>
+            {% endif %}
+            
+            <div class="note">
+                <em>Keep up the great work and continue to strive for excellence in your future endeavors!</em>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock body %}

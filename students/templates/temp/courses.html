@@ -1,0 +1,61 @@
+{% extends "index.html" %}
+{% block css %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #e9f7fd;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) {
+        --bs-table-accent-bg: #f1f8fb;
+        color: #212529;
+    }
+    .table thead th {
+        background-color: #007bff;
+        color: white;
+    }
+    .btn-view {
+        background-color: #28a745;
+        border: none;
+    }
+    .btn-view:hover {
+        background-color: #218838;
+    }
+</style>
+{% endblock css %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">{{data.title}}</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if data.courses %}
+                    {% for course in data.courses %}
+                    <tr>
+                        <th scope="row">{{course.id}}</th>
+                        <td>{{course.title}}</td>
+                        <td>${{course.amount}}</td>
+                        <td><a href="/course/{{course.id}}" class="btn btn-view btn-sm">View</a></td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}

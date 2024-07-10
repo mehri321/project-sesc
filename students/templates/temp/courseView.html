@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+{% block css %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .card {
+        border: none;
+        border-radius: 0.5rem;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+    .card-body {
+        background-color: #ffffff;
+    }
+    .btn-enroll {
+        background-color: #28a745;
+        border: none;
+        margin-right: 10px;
+    }
+    .btn-enroll:hover {
+        background-color: #218838;
+    }
+    .btn-back {
+        background-color: #6c757d;
+        border: none;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h2 class="mb-0">{{ data.course.title }}</h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Course ID: {{ data.course.id }}</h5>
+            <p class="card-text"><strong>Description:</strong> {{ data.course.description }}</p>
+            <p class="card-text"><strong>Fee:</strong> ${{ data.course.amount }}</p>
+            <div class="d-flex justify-content-center align-items-center">
+                {% if data.enrollment %}
+                <a href="/cancel-enrollment/{{data.enrollment.id}}" class="btn btn-danger text-white ">Cancel Enrollment</a>
+                {% else %}
+                
+                <a href="/enroll/{{data.course.id}}" class="btn text-white btn-enroll">Enroll Now</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

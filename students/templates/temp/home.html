@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{% block css %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .instructions {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    .instructions h2 {
+        color: #007bff;
+    }
+    .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .list-group-item {
+        border: none;
+        background-color: #f8f9fa;
+    }
+    .list-group-item strong {
+        color: #28a745;
+    }
+    .card {
+        border: none;
+    }
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+    .btn-view {
+        background-color: #28a745;
+        border: none;
+    }
+    .btn-view:hover {
+        background-color: #218838;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="header mb-3 rounded rounded-3">
+        <h1>Welcome to Our Portal</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">How to Use</h2>
+                </div>
+                <div class="card-body">
+                    <div class="instructions">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Step 1:</strong> Register an account if you don't have one.</li>
+                            <li class="list-group-item"><strong>Step 2:</strong> Log in using your registered email and password.</li>
+                            <li class="list-group-item"><strong>Step 3:</strong> Navigate to the "Courses" section to view available courses.</li>
+                            <li class="list-group-item"><strong>Step 4:</strong> Enroll in the desired courses.</li>
+                            <li class="list-group-item"><strong>Step 5:</strong> Check your "Enrolled Courses" to manage your enrollments.</li>
+                            <li class="list-group-item"><strong>Step 6:</strong> Pay your invoices promptly to avoid penalties.</li>
+                            <li class="list-group-item"><strong>Step 7:</strong> Check your graduation status once you complete all requirements.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer mt-4">
+        <p>&copy; 2024 Your Portal. All rights reserved.</p>
+    </div>
+</div>
+{% endblock body %}

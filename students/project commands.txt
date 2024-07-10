@@ -1,0 +1,13 @@
+1. navigate to CESBooks directory and run the commands
+   docker compose up -d
+
+2. navigate to finance directory and run the command
+   docker compose up -d
+
+3. navigate to students directory and run these commands
+
+   pip install -r requirements.txt
+   
+   flask db upgrade
+   
+   flask run
